@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighbourhood Fix Map – City View </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Neighbourhood <span>Fix Map+</span></div>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#city-map-section">City Map</a>
+            <a href="#neighbourhood-maps">Neighbourhood Maps</a>
+            <a href="#issues-panel">Issues</a>
+            <a href="#report">Report</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero" class="hero hero--big">
+        <div class="hero-text">
+            <h1>Map Every Problem. Make Every Street Safer.</h1>
+            <p>
+                This static demo shows how a city-wide <strong>Neighbourhood Fix Map</strong> could track
+                potholes, broken benches, dark streets, high-crime spots, animal areas, kids' spaces and more —
+                built by Ayush choudhary , Avinash pal , Ayush gautam , Chaitanya and Dhruv Balmiki.
+            </p>
+            <div class="hero-actions">
+                <a href="#city-map-section" class="btn-primary">Explore City Map</a>
+                <a href="#report" class="btn-secondary">Report a Problem</a>
+            </div>
+            <p class="hero-tagline">
+                Front-end only • 
+            </p>
+        </div>
+
+        <div class="hero-summary">
+            <div class="summary-card">
+                <h3>City Snapshot </h3>
+                <div class="summary-row">
+                    <span>Total Issues</span><span class="badge badge--red">18</span>
+                </div>
+                <div class="summary-row">
+                    <span>High Crime Spots</span><span class="badge badge--orange">3</span>
+                </div>
+                <div class="summary-row">
+                    <span>Dark / Streetlight Issues</span><span class="badge badge--yellow">4</span>
+                </div>
+                <div class="summary-row">
+                    <span>Potholes &amp; Road Damage</span><span class="badge badge--blue">5</span>
+                </div>
+                <div class="summary-row">
+                    <span>Garbage &amp; Cleanliness</span><span class="badge badge--green">3</span>
+                </div>
+                <p class="summary-note">
+                    All numbers are sample values to make the UI look realistic.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CITY MAP SECTION -->
+    <section id="city-map-section" class="section section-city-map">
+        <header class="section-header">
+            <h2>City Overview Map</h2>
+            <p>
+                A simple hand-drawn style map of the city with multiple neighbourhoods,
+                landmarks and issue pins. Everything is designed using only HTML and CSS.
+            </p>
+        </header>
+
+        <div class="city-layout">
+            <!-- LEFT: CITY MAP -->
+            <div class="city-map-card">
+                <div class="toolbar">
+                    <div class="toolbar-group">
+                        <span class="toolbar-label">Focus Area:</span>
+                        <span class="toolbar-pill">Entire City </span>
+                    </div>
+                    <div class="toolbar-group">
+                        <span class="toolbar-label">Issue Types Shown:</span>
+                        <span class="toolbar-pill">Potholes</span>
+                        <span class="toolbar-pill">Benches</span>
+                        <span class="toolbar-pill">Streetlights</span>
+                        <span class="toolbar-pill">Crime</span>
+                        <span class="toolbar-pill">Cleanliness</span>
+                        <span class="toolbar-pill">Animal Zones</span>
+                    </div>
+                </div>
+
+                <!-- FAKE CITY MAP  -->
+                <div class="map map--large">
+                    <!-- Roads -->
+                    <div class="road road--h road--h1"></div>
+                    <div class="road road--h road--h2"></div>
+                    <div class="road road--h road--h3"></div>
+                    <div class="road road--v road--v1"></div>
+                    <div class="road road--v road--v2"></div>
+                    <div class="road road--v road--v3"></div>
+
+                    <!-- Zones -->
+                    <div class="zone zone--green-park">Green Park</div>
+                    <div class="zone zone--river-side">River Side</div>
+                    <div class="zone zone--old-town">Old Town</div>
+                    <div class="zone zone--market-circle">Market Circle</div>
+                    <div class="zone zone--lakeside-view">Lakeside View</div>
+
+                    <!-- Landmarks -->
+                    <div class="landmark landmark--school">School</div>
+                    <div class="landmark landmark--playground">Kids Play Area</div>
+                    <div class="landmark landmark--hospital">City Hospital</div>
+                    <div class="landmark landmark--market">Central Market</div>
+                    <div class="landmark landmark--animal-shelter">Animal Shelter</div>
+                    <div class="landmark landmark--bus-stand">Bus Stand</div>
+                    <div class="landmark landmark--police">Police Station</div>
+                    <div class="landmark landmark--lake">City Lake</div>
+
+                    <!-- ISSUE PINS  -->
+                    <!-- Green Park -->
+                    <div class="pin pin--pothole" title="Deep pothole near park gate"></div>
+                    <div class="pin pin--bench" title="Broken bench in kids play area"></div>
+                    <div class="pin pin--streetlight" title="Streetlight not working near jogging track"></div>
+                    <div class="pin pin--animal pin-gp-animal" title="Dog feeding spot – needs signboard"></div>
+                    <div class="pin pin--cleanliness pin-gp-clean" title="Overflowing bin near school gate"></div>
+
+                    <!-- River Side -->
+                    <div class="pin pin--pothole pin-pos-river-1" title="Series of small potholes by river road"></div>
+                    <div class="pin pin--cleanliness pin-pos-river-2" title="Overflowing dustbin beside walking lane"></div>
+                    <div class="pin pin--streetlight pin-pos-river-3" title="Dark poles near river bend"></div>
+
+                    <!-- Old Town -->
+                    <div class="pin pin--crime pin-pos-old-1" title="Phone snatching incident"></div>
+                    <div class="pin pin--crime pin-pos-old-2" title="Chain snatching hotspot"></div>
+                    <div class="pin pin--cleanliness pin-pos-old-3" title="Illegal dumping in narrow lane"></div>
+
+                    <!-- Market Circle -->
+                    <div class="pin pin--pothole pin-pos-market-1" title="Broken manhole cover"></div>
+                    <div class="pin pin--bench pin-pos-market-2" title="Damaged public bench"></div>
+                    <div class="pin pin--streetlight pin-pos-market-3" title="Half streetlights not working"></div>
+
+                    <!-- Lakeside View -->
+                    <div class="pin pin--animal pin-pos-lake-1" title="Stray dog group near jogging track"></div>
+                    <div class="pin pin--cleanliness pin-pos-lake-2" title="Trash around lake edge"></div>
+                    <div class="pin pin--streetlight pin-pos-lake-3" title="Dark lakeside walking loop"></div>
+                    <div class="pin pin--pothole pin-pos-lake-4" title="Waterlogged pothole during rains"></div>
+                </div>
+
+                <p class="map-note">
+                    This city map is completely static and built only using HTML &amp; CSS. Pins, zones and landmarks
+                    are positioned manually to visually explain the concept for your project.
+                </p>
+            </div>
+
+            <!-- RIGHT: ISSUES & INCIDENTS (STATIC) -->
+            <aside id="issues-panel" class="issues-panel">
+                <h3>Major Issues Across the City</h3>
+                <ul class="issues-list">
+                    <!-- Green Park -->
+                    <li class="issue-item">
+                        <div class="issue-title">Deep pothole near main park gate</div>
+                        <div>
+                            <span class="chip chip--area">Green Park</span>
+                            <span class="chip chip--type">Pothole</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Entry lane from north side<br>
+                            Reported by 5 neighbours
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Broken bench in kids play zone</div>
+                        <div>
+                            <span class="chip chip--area">Green Park</span>
+                            <span class="chip chip--type">Bench</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Inside central play area<br>
+                            2 minor injuries reported
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Streetlight off for last 10 days</div>
+                        <div>
+                            <span class="chip chip--area">Green Park</span>
+                            <span class="chip chip--type">Streetlight</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Jogging track, east corner<br>
+                            Area very dark after 7 PM
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Dog feeding spot without clear signage</div>
+                        <div>
+                            <span class="chip chip--area">Green Park</span>
+                            <span class="chip chip--type">Animal Zone</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Near south gate benches<br>
+                            Needs proper signboard and safety instructions
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Overflowing bin near school gate</div>
+                        <div>
+                            <span class="chip chip--area">Green Park</span>
+                            <span class="chip chip--type">Cleanliness</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Right outside main school entrance<br>
+                            Students crossing near garbage
+                        </div>
+                    </li>
+
+                    <!-- River Side -->
+                    <li class="issue-item">
+                        <div class="issue-title">Series of potholes on river road</div>
+                        <div>
+                            <span class="chip chip--area">River Side</span>
+                            <span class="chip chip--type">Pothole</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Bend near River View apartments<br>
+                            Bikes slipping during rain
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Overflowing dustbin beside walking lane</div>
+                        <div>
+                            <span class="chip chip--area">River Side</span>
+                            <span class="chip chip--type">Cleanliness</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Near riverside seating area<br>
+                            Stray dogs pulling garbage out
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Dark poles near river bend</div>
+                        <div>
+                            <span class="chip chip--area">River Side</span>
+                            <span class="chip chip--type">Streetlight</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Sharp curve past the bridge<br>
+                            People avoid walking at night
+                        </div>
+                    </li>
+
+                    <!-- Old Town -->
+                    <li class="issue-item">
+                        <div class="issue-title">Phone snatching incident last week</div>
+                        <div>
+                            <span class="chip chip--area">Old Town</span>
+                            <span class="chip chip--type">High Crime</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Lane 3, near old tea stall<br>
+                            Reported to local police station
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Repeated chain snatching complaints</div>
+                        <div>
+                            <span class="chip chip--area">Old Town</span>
+                            <span class="chip chip--type">High Crime</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Busy bazaar crossroad<br>
+                            3 cases in last 2 months
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Illegal garbage dumping in dead-end lane</div>
+                        <div>
+                            <span class="chip chip--area">Old Town</span>
+                            <span class="chip chip--type">Cleanliness</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Dead-end behind temple<br>
+                            Strong smell, flies and stray animals
+                        </div>
+                    </li>
+
+                    <!-- Market Circle -->
+                    <li class="issue-item">
+                        <div class="issue-title">Broken manhole cover on main circle</div>
+                        <div>
+                            <span class="chip chip--area">Market Circle</span>
+                            <span class="chip chip--type">Road / Manhole</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: In front of bakery shop<br>
+                            Risk of people stepping in
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Damaged public bench, sharp edges</div>
+                        <div>
+                            <span class="chip chip--area">Market Circle</span>
+                            <span class="chip chip--type">Bench</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Opposite bus stand<br>
+                            Unsafe for elderly and kids
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Half of streetlights not working</div>
+                        <div>
+                            <span class="chip chip--area">Market Circle</span>
+                            <span class="chip chip--type">Streetlight</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Ring road near taxi stand<br>
+                            Shops close early due to darkness
+                        </div>
+                    </li>
+
+                    <!-- Lakeside View -->
+                    <li class="issue-item">
+                        <div class="issue-title">Stray dog group chasing cyclists</div>
+                        <div>
+                            <span class="chip chip--area">Lakeside View</span>
+                            <span class="chip chip--type">Animal Zone</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Lakeside jogging track exit<br>
+                            3 complaints in last week
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Trash scattered around lake edge</div>
+                        <div>
+                            <span class="chip chip--area">Lakeside View</span>
+                            <span class="chip chip--type">Cleanliness</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Sitting steps by water<br>
+                            Plastic waste entering the lake
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Dark stretch around walking loop</div>
+                        <div>
+                            <span class="chip chip--area">Lakeside View</span>
+                            <span class="chip chip--type">Streetlight</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Back side of lake, less crowded<br>
+                            Walkers feel unsafe after 8 PM
+                        </div>
+                    </li>
+                    <li class="issue-item">
+                        <div class="issue-title">Waterlogged pothole near lakeside dhaba</div>
+                        <div>
+                            <span class="chip chip--area">Lakeside View</span>
+                            <span class="chip chip--type">Pothole</span>
+                        </div>
+                        <div class="issue-meta">
+                            Location: Opposite small parking area<br>
+                            Cars splashing water on walkers
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="incident-box">
+                    <h4>Recent Sensitive Incidents </h4>
+                    <ul class="incident-list">
+                        <li>Chain snatching at Old Town bazaar crossroad (evening).</li>
+                        <li>Phone snatching near tea stall in Old Town Lane 3.</li>
+                        <li>Dark lakeside stretch reported unsafe by walkers.</li>
+                    </ul>
+                    <p class="incident-note">
+                        These are sample entries like <strong>last snatching spot</strong> or
+                        <strong>high-crime lane</strong> to show how the UI can highlight safety-related information.
+                    </p>
+                </div>
+
+                <div class="legend">
+                    <h4>Legend</h4>
+                    <div class="legend-row"><span class="legend-dot legend-dot--blue"></span> Pothole / Road Damage</div>
+                    <div class="legend-row"><span class="legend-dot legend-dot--green"></span> Bench / Park Damage</div>
+                    <div class="legend-row"><span class="legend-dot legend-dot--yellow"></span> Streetlight / Dark Area</div>
+                    <div class="legend-row"><span class="legend-dot legend-dot--red"></span> High Crime / Snatching</div>
+                    <div class="legend-row"><span class="legend-dot legend-dot--purple"></span> Cleanliness / Garbage</div>
+                    <div class="legend-row"><span class="legend-dot legend-dot--orange"></span> Animal Zone / Stray Dogs</div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- NEIGHBOURHOOD MINI MAPS -->
+    <section id="neighbourhood-maps" class="section section-neighbourhood">
+        <header class="section-header">
+            <h2>Neighbourhood-Level Maps</h2>
+            <p>
+                Smaller maps for individual neighbourhoods show how issues can be tracked at a more detailed level.
+                These are also fully static and drawn using only HTML and CSS.
+            </p>
+        </header>
+
+        <div class="mini-maps-grid">
+            <!-- Green Park mini map -->
+            <div class="mini-map-card">
+                <h3>Green Park</h3>
+                <div class="map map--mini">
+                    <div class="road road--h road--mini-h1"></div>
+                    <div class="road road--v road--mini-v1"></div>
+                    <div class="landmark landmark--mini-park">Central Park</div>
+                    <div class="landmark landmark--mini-playground">Play Area</div>
+                    <div class="pin pin--pothole mini-pin-1"></div>
+                    <div class="pin pin--bench mini-pin-2"></div>
+                    <div class="pin pin--streetlight mini-pin-3"></div>
+                </div>
+                <p class="mini-map-note">
+                    Focus: jogging track safety, benches and smooth walking paths.
+                </p>
+            </div>
+
+            <!-- Old Town mini map -->
+            <div class="mini-map-card">
+                <h3>Old Town</h3>
+                <div class="map map--mini">
+                    <div class="road road--h road--mini-h2"></div>
+                    <div class="road road--h road--mini-h3"></div>
+                    <div class="road road--v road--mini-v2"></div>
+                    <div class="landmark landmark--mini-market">Old Market</div>
+                    <div class="landmark landmark--mini-police">Police Outpost</div>
+                    <div class="pin pin--crime mini-pin-4"></div>
+                    <div class="pin pin--crime mini-pin-5"></div>
+                    <div class="pin pin--cleanliness mini-pin-6"></div>
+                </div>
+                <p class="mini-map-note">
+                    Focus: narrow crowded lanes, snatching spots and garbage dumping.
+                </p>
+            </div>
+
+            <!-- Lakeside View mini map -->
+            <div class="mini-map-card">
+                <h3>Lakeside View</h3>
+                <div class="map map--mini">
+                    <div class="road road--h road--mini-h4"></div>
+                    <div class="road road--v road--mini-v3"></div>
+                    <div class="landmark landmark--mini-lake">Lake Edge</div>
+                    <div class="landmark landmark--mini-shelter">Dog Shelter</div>
+                    <div class="pin pin--animal mini-pin-7"></div>
+                    <div class="pin pin--cleanliness mini-pin-8"></div>
+                    <div class="pin pin--streetlight mini-pin-9"></div>
+                </div>
+                <p class="mini-map-note">
+                    Focus: animal safety, evening walks and lake cleanliness.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- REPORT Form for the people  -->
+    <section id="report" class="section section-report">
+        <header class="section-header">
+            <h2>Report a Problem (Static Front-End)</h2>
+            <p>
+                This form demonstrates how citizens could report local problems. Since this is a pure HTML &amp; CSS
+                project, the data is not actually saved.
+            </p>
+        </header>
+
+        <form class="report-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="problem-title">Problem Title</label>
+                    <input id="problem-title" type="text" placeholder="E.g. Two broken streetlights near bus stop">
+                </div>
+                <div class="form-group">
+                    <label for="problem-type">Type of Problem</label>
+                    <select id="problem-type">
+                        <option>Pothole / Road</option>
+                        <option>Bench / Park Damage</option>    
+                        <option>Streetlight / Dark Area</option>
+                        <option>High Crime / Snatching</option>
+                        <option>Garbage / Cleanliness</option>
+                        <option>Animal Zone / Stray Dogs</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="problem-area">Neighbourhood / Area</label>
+                    <select id="problem-area">
+                        <option>Green Park</option>
+                        <option>River Side</option>
+                        <option>Old Town</option>
+                        <option>Market Circle</option>
+                        <option>Lakeside View</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="problem-landmark">Nearest Landmark</label>
+                    <input id="problem-landmark" type="text" placeholder="E.g. In front of City Hospital gate">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="problem-description">Short Description</label>
+                <textarea id="problem-description" rows="3"
+                          placeholder="Explain what is wrong, how often it happens, and how it affects people."></textarea>
+            </div>
+
+            
+
+            <!-- This will be shown/hidden using CSS :checked selector -->
+            <div class="more-details">
+                <div class="more-details-inner">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="problem-duration">Since when?</label>
+                            <input id="problem-duration" type="text" placeholder="E.g. 3 weeks, 2 months, etc.">
+                        </div>
+                        <div class="form-group">
+                            <label for="impact-level">Impact Level</label>
+                            <select id="impact-level">
+                                <option>Low</option>
+                                <option>Medium</option>
+                                <option>High</option>
+                                <option>Very High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="problem-suggestion">Your Suggestion (optional)</label>
+                        <textarea id="problem-suggestion" rows="3"
+                                  placeholder="What do you think should be done? Extra lights, more patrol, repair, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="problem-photo">Upload Photo </label>
+                        <input id="problem-photo" type="file" accept="image/*">
+                        <p class="small-note">
+                            This is a static and there is no backend .
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn-primary btn-full">
+                Submit Problem Report 
+            </button>
+            
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Neighbourhood Fix Map+ — Detailed HTML &amp; CSS Demo | B.Tech 1st Semester Project</p>
+        <p class="footer-small">
+            Built using only HTML and CSS by Ayush choudhary .
+        </p>
+    </footer>
+</body>
+</html>

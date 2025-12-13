@@ -1,0 +1,662 @@
+/* RESET + BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #f4f5fb;
+    color: #111827;
+    line-height: 1.5;
+}
+
+/* NAVigation bar  */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 5vw;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.navbar nav a {
+    margin-left: 1.1rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: #4b5563;
+    transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+    color: #2563eb;
+}
+
+/* HERO */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.6fr);
+    gap: 2.2rem;
+    padding: 2.4rem 5vw 2rem;
+    align-items: center;
+}
+
+.hero--big {
+    padding-top: 3rem;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.9rem;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    max-width: 34rem;
+    color: #4b5563;
+}
+
+.hero-actions {
+    margin: 1.5rem 0 0.6rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: #ffffff;
+    margin-right: 0.7rem;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-secondary {
+    background: #e0ebff;
+    color: #1d4ed8;
+}
+
+.btn-secondary:hover {
+    background: #d2e0ff;
+}
+
+.hero-tagline {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-top: 0.4rem;
+}
+
+/* HERO SUMMARY CARD */
+.hero-summary {
+    display: flex;
+    justify-content: center;
+}
+
+.summary-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.2rem 1.3rem;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+    max-width: 20rem;
+    width: 100%;
+}
+
+.summary-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0.12rem 0;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    color: #ffffff;
+}
+
+.badge--red { background: #ef4444; }
+.badge--orange { background: #f97316; }
+.badge--yellow { background: #eab308; }
+.badge--blue { background: #3b82f6; }
+.badge--green { background: #22c55e; }
+
+.summary-note {
+    font-size: 0.78rem;
+    color: #9ca3af;
+    margin-top: 0.6rem;
+}
+
+/* SECTIONS */
+.section {
+    padding: 2.4rem 5vw;
+}
+
+.section-header {
+    margin-bottom: 1.3rem;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.section-header p {
+    max-width: 42rem;
+    font-size: 0.96rem;
+    color: #4b5563;
+}
+
+/* CITY MAP LAYOUT */
+.section-city-map {
+    background: #e4ecff;
+}
+
+.city-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+    gap: 1.6rem;
+    align-items: flex-start;
+}
+
+/* CITY MAP CARD */
+.city-map-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+}
+
+/* Toolbar (static) */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.toolbar-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.toolbar-label {
+    font-size: 0.82rem;
+    color: #4b5563;
+}
+
+.toolbar-pill {
+    font-size: 0.82rem;
+    background: #edf1ff;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+}
+
+/* MAP BASE */
+.map {
+    position: relative;
+    background: #eff5ff;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.map--large {
+    height: 320px;
+}
+
+.map--mini {
+    height: 180px;
+}
+
+/* ROADS */
+.road {
+    position: absolute;
+    background: #cbd5f5;
+}
+
+.road--h { height: 18px; width: 100%; }
+.road--v { width: 18px; height: 100%; }
+
+.road--h1 { top: 18%; }
+.road--h2 { top: 50%; }
+.road--h3 { top: 80%; }
+
+.road--v1 { left: 18%; }
+.road--v2 { left: 50%; }
+.road--v3 { left: 80%; }
+
+/* ZONES */
+.zone {
+    position: absolute;
+    border-radius: 0.6rem;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.75rem;
+    background: rgba(191, 219, 254, 0.8);
+    color: #1f2937;
+}
+
+.zone--green-park { top: 8%; left: 6%; }
+.zone--river-side { top: 8%; right: 6%; }
+.zone--old-town { top: 44%; left: 6%; }
+.zone--market-circle { top: 44%; right: 6%; }
+.zone--lakeside-view { bottom: 6%; right: 10%; }
+
+/* LANDMARKS */
+.landmark {
+    position: absolute;
+    background: #dbeafe;
+    border-radius: 0.5rem;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.72rem;
+    color: #111827;
+}
+
+.landmark--school { top: 14%; left: 22%; }
+.landmark--playground { top: 26%; left: 10%; }
+.landmark--hospital { top: 14%; left: 58%; }
+.landmark--market { top: 52%; left: 60%; }
+.landmark--animal-shelter { top: 68%; left: 10%; }
+.landmark--bus-stand { top: 52%; left: 33%; }
+.landmark--police { top: 52%; left: 13%; }
+.landmark--lake { bottom: 10%; right: 14%; }
+
+/* PINS */
+.pin {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.6);
+}
+
+/* Color by type */
+.pin--pothole { background: #3b82f6; box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); }
+.pin--bench { background: #22c55e; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.5); }
+.pin--streetlight { background: #eab308; box-shadow: 0 0 0 2px rgba(234, 179, 8, 0.5); }
+.pin--crime { background: #ef4444; box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.5); }
+.pin--cleanliness { background: #a855f7; box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.5); }
+.pin--animal { background: #f97316; box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.5); }
+
+/* Positions for main pins */
+.pin--pothole { top: 26%; left: 24%; }              /* Green Park road */
+.pin--bench { top: 30%; left: 12%; }                /* Bench near park */
+.pin--streetlight { top: 20%; left: 34%; }          /* Dark spot */
+
+.pin-gp-animal { top: 34%; left: 18%; }
+.pin-gp-clean { top: 18%; left: 16%; }
+
+.pin-pos-river-1 { top: 24%; right: 18%; }
+.pin-pos-river-2 { top: 30%; right: 30%; }
+.pin-pos-river-3 { top: 16%; right: 34%; }
+
+.pin-pos-old-1 { top: 52%; left: 22%; }
+.pin-pos-old-2 { top: 60%; left: 18%; }
+.pin-pos-old-3 { top: 58%; left: 32%; }
+
+.pin-pos-market-1 { top: 48%; left: 68%; }
+.pin-pos-market-2 { top: 58%; left: 62%; }
+.pin-pos-market-3 { top: 54%; left: 48%; }
+
+.pin-pos-lake-1 { bottom: 12%; right: 22%; }
+.pin-pos-lake-2 { bottom: 18%; right: 14%; }
+.pin-pos-lake-3 { bottom: 22%; right: 32%; }
+.pin-pos-lake-4 { bottom: 26%; right: 24%; }
+
+.map-note {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 0.6rem;
+}
+
+/* ISSUES PANEL */
+.issues-panel {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+}
+
+.issues-panel h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.issues-list {
+    list-style: none;
+    font-size: 0.9rem;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 0.8rem;
+    padding-right: 0.4rem;
+}
+
+.issue-item {
+    padding: 0.6rem 0.5rem;
+    border-radius: 0.6rem;
+    background: #f9fafb;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    margin-bottom: 0.45rem;
+}
+
+.issue-title {
+    font-weight: 600;
+    margin-bottom: 0.12rem;
+}
+
+.issue-meta {
+    font-size: 0.78rem;
+    color: #6b7280;
+    margin-top: 0.2rem;
+}
+
+/* Chips */
+.chip {
+    display: inline-block;
+    font-size: 0.72rem;
+    border-radius: 999px;
+    padding: 0.1rem 0.4rem;
+    margin-right: 0.25rem;
+}
+
+.chip--area { background: #e0f2fe; color: #0369a1; }
+.chip--type { background: #fef9c3; color: #854d0e; }
+
+/* INCIDENT BOX */
+.incident-box {
+    border-top: 1px dashed #e5e7eb;
+    padding-top: 0.8rem;
+    margin-top: 0.4rem;
+}
+
+.incident-box h4 {
+    font-size: 0.98rem;
+    margin-bottom: 0.4rem;
+}
+
+.incident-list {
+    list-style: none;
+    font-size: 0.86rem;
+    margin-bottom: 0.4rem;
+}
+
+.incident-list li {
+    padding: 0.35rem 0.3rem;
+    border-radius: 0.5rem;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    margin-bottom: 0.3rem;
+}
+
+.incident-note {
+    font-size: 0.76rem;
+    color: #9ca3af;
+}
+
+/* LEGEND */
+.legend {
+    border-top: 1px dashed #e5e7eb;
+    padding-top: 0.7rem;
+    margin-top: 0.4rem;
+    font-size: 0.82rem;
+}
+
+.legend h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.legend-row {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.18rem;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+}
+
+.legend-dot--blue { background: #3b82f6; }
+.legend-dot--green { background: #22c55e; }
+.legend-dot--yellow { background: #eab308; }
+.legend-dot--red { background: #ef4444; }
+.legend-dot--purple { background: #a855f7; }
+.legend-dot--orange { background: #f97316; }
+
+/* NEIGHBOURHOOD MINI MAPS */
+.section-neighbourhood {
+    background: #f9fafb;
+}
+
+.mini-maps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.3rem;
+}
+
+.mini-map-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    font-size: 0.9rem;
+}
+
+.mini-map-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* Mini roads */
+.road--mini-h1 { top: 35%; }
+.road--mini-h2 { top: 30%; }
+.road--mini-h3 { top: 65%; }
+.road--mini-h4 { top: 45%; }
+
+.road--mini-v1 { left: 45%; }
+.road--mini-v2 { left: 35%; }
+.road--mini-v3 { left: 60%; }
+
+/* Mini landmarks */
+.landmark--mini-park { top: 15%; left: 15%; }
+.landmark--mini-playground { top: 60%; left: 12%; }
+
+.landmark--mini-market { top: 20%; left: 55%; }
+.landmark--mini-police { top: 65%; left: 10%; }
+
+.landmark--mini-lake { top: 20%; left: 40%; }
+.landmark--mini-shelter { top: 60%; left: 65%; }
+
+/* Mini pins */
+.mini-pin-1 { top: 30%; left: 30%; }
+.mini-pin-2 { top: 45%; left: 20%; }
+.mini-pin-3 { top: 30%; left: 55%; }
+
+.mini-pin-4 { top: 30%; left: 30%; }
+.mini-pin-5 { top: 50%; left: 50%; }
+.mini-pin-6 { top: 60%; left: 35%; }
+
+.mini-pin-7 { top: 30%; left: 35%; }
+.mini-pin-8 { top: 55%; left: 50%; }
+.mini-pin-9 { top: 40%; left: 60%; }
+
+.mini-map-note {
+    font-size: 0.78rem;
+    color: #6b7280;
+    margin-top: 0.4rem;
+}
+
+/* REPORT FORM */
+.section-report {
+    background: #eef2ff;
+}
+
+.report-form {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.1rem 1.2rem;
+    max-width: 820px;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.18rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border-radius: 0.55rem;
+    border: 1px solid #cbd5e1;
+    padding: 0.45rem 0.55rem;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.86rem;
+}
+
+/* MORE DETAILS – CSS ONLY TOGGLE */
+.more-details {
+    border-top: 1px dashed #e5e7eb;
+    margin-top: 0.5rem;
+    padding-top: 0.6rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+/* When checkbox is checked, expand */
+#more-details-toggle:checked ~ .more-details {
+    max-height: 800px;
+}
+
+.more-details-inner {
+    padding-top: 0.3rem;
+}
+
+.btn-full {
+    margin-top: 0.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.form-info {
+    margin-top: 0.6rem;
+    font-size: 0.78rem;
+    color: #6b7280;
+}
+
+.small-note {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+/* FOOTER */
+.footer {
+    padding: 1.4rem 5vw 1.6rem;
+    background: #0f172a;
+    color: #e5e7eb;
+    text-align: center;
+    font-size: 0.84rem;
+}
+
+.footer-small {
+    font-size: 0.76rem;
+    color: #9ca3af;
+    margin-top: 0.2rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .city-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+
+    .navbar nav a {
+        margin-left: 0;
+        margin-right: 0.8rem;
+    }
+
+    .hero {
+        padding-top: 2.2rem;
+    }
+}
